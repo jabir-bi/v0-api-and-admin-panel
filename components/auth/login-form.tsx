@@ -32,10 +32,12 @@ export function LoginForm() {
   })
 
   const onSubmit = async (data: LoginFormData) => {
+    console.log("[v0] Form submitted with data:", data)
     setError("")
     try {
-      login(data)
+      login(data.email, data.password)
     } catch (err: any) {
+      console.log("[v0] Login error:", err)
       setError(err.message || "Login failed")
     }
   }
