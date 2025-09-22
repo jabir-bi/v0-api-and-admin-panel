@@ -35,7 +35,7 @@ export function LoginForm() {
     console.log("[v0] Form submitted with data:", data)
     setError("")
     try {
-      login(data.email, data.password)
+      login({ email: data.email, password: data.password })
     } catch (err: any) {
       console.log("[v0] Login error:", err)
       setError(err.message || "Login failed")
